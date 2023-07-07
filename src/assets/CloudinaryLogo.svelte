@@ -5,7 +5,7 @@
   ><title>Cloudinary Logo</title><defs
     ><style>
       .cls-1 {
-        fill: #3448c5;
+        fill: #3b82f6;
       }
     </style></defs
   ><g id="Layer_2" data-name="Layer 2"

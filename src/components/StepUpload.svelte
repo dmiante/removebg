@@ -4,8 +4,8 @@
   import Dropzone from "dropzone";
   import "dropzone/dist/dropzone.css";
 
-  import { ImageStatus } from "./types.d";
-  import { imageStatus, modifiedImage, originalImage } from "./store";
+  import { ImageStatus } from "../types.d";
+  import { imageStatus, modifiedImage, originalImage } from "../store";
 
   import { onMount } from "svelte";
 
@@ -58,17 +58,17 @@
 
 <form
   id="dropzone"
-  class="shadow-2xl border-dashed border-2 border-gray-300 rounded-lg aspect-video w-full flex items-center justify-center flex-col hover:bg-slate-200 cursor-pointer"
+  class="shadow-2xl border-dashed border-2 border-[#4a044e] rounded-lg aspect-video w-2/5 flex items-center justify-center flex-col cursor-pointer hover:bg-[#4a044e]"
   action="https://api.cloudinary.com/v1_1/midudev/image/upload"
 >
   {#if $imageStatus === ImageStatus.READY}
     <button
-      class="font-bold pointer-events-none bg-blue-600 rounded-full text-bold text-white text-xl px-6 py-4"
+      class="font-bold pointer-events-none bg-blue-800 rounded-full text-bold text-white text-xl px-6 py-4"
     >
       Upload files
     </button>
-    <strong class="text-lg mt-4 text-gray-800">or drop a file</strong>
+    <strong class="text-lg mt-4 text-gray-400">or drop a file</strong>
   {:else if $imageStatus === ImageStatus.UPLOADING}
-    <strong class="text-lg mt-4 text-gray-800">Uploading files...</strong>
+    <strong class="text-white text-lg mt-4">Uploading files...</strong>
   {/if}
 </form>
