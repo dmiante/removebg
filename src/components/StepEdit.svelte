@@ -22,16 +22,6 @@
   }
 </script>
 
-<!-- <two-up>
-  <img src={$originalImage} alt="Imagen original subida por el usuario" />
-  {#if processingImage}
-    <div class="flex flex-col justify-center items-center">
-      <p class="text-center mt-4">Procesando imagen...</p>
-    </div>
-  {:else}
-    <img src={$modifiedImage} alt="Imagen sin fondo subida por el usuario" />
-  {/if}
-</two-up> -->
 <div class="flex flex-col items-center justify-center">
   {#if processingImage}
   <div class="flex items-center justify-center">
@@ -44,7 +34,7 @@
     </button>
   </div>
     {:else}
-    <div>
+    <div class="flex flex-col items-center justify-center gap-10">
       <two-up>
         <img src={$originalImage} alt="Imagen original subida por el usuario" />
         <img src={$modifiedImage} alt="Imagen sin fondo subida por el usuario" />
@@ -52,7 +42,7 @@
       <a
         download
         href={$modifiedImage}
-        class="block bg-blue-500 hover:bg-blue-700 text-xl text-center w-full font-bold text-white rounded-full px-4 py-4 mt-10"
+        class="block bg-blue-500 hover:bg-blue-700 text-xl text-center w-full font-bold text-white rounded-full px-8 py-5 mb-20 lg:cursor-pointer lg:w-fit transition duration-300"
       >
         Download image without background
       </a>
