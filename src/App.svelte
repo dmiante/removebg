@@ -8,20 +8,18 @@
 </script>
 
 <div
-  class=""
+  class="min-h-screen flex flex-col container mx-auto p-4"
 >
   <Header />
-  <main class="my-20">
-    <p class="text-3xl text-white font-mono text-center my-5">
+  <main class="flex w-full flex-1 flex-col justify-center gap-10 lg:items-center">
+    <p class="text-3xl text-white font-mono text-center mb-20">
       Remove background of your photos. Easy, Simple and <strong class="text-6xl">FREE!!!</strong>
     </p>
-    <div class="flex flex-col justify-center items-center my-10">
-      {#if $imageStatus === ImageStatus.READY || $imageStatus === ImageStatus.UPLOADING}
-        <StepUpload />
-      {:else if $imageStatus === ImageStatus.DONE}
-        <StepEdit />
-      {/if}
-    </div>
+    {#if $imageStatus === ImageStatus.READY || $imageStatus === ImageStatus.UPLOADING}
+      <StepUpload />
+    {:else if $imageStatus === ImageStatus.DONE}
+      <StepEdit />
+    {/if}
   </main>
   <Footer />
 </div>
